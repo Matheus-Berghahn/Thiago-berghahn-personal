@@ -34,7 +34,7 @@ export const Header = () => {
                 initial="hidden"
                 animate="visible"
                 variants={letterVariants}
-                className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight inline-block text-white"
+                className="text-4xl md:text-7xl lg:text-8xl font-light tracking-tight inline-block text-white"
               >
                 {char === ' ' ? '\u00A0' : char}
               </motion.span>
@@ -54,7 +54,7 @@ export const Header = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
         >
-          <p className="text-base md:text-lg text-gray-500 tracking-wide font-light">
+          <p className="text-2xl md:text-lg text-gray-500 tracking-wide font-light">
             {subtitle}
           </p>
           <p className="text-xs text-gray-600 mt-4 tracking-wider">CREF 042105-G/RS</p>
