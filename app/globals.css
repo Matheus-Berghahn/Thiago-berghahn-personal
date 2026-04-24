@@ -54,7 +54,7 @@ body{
 .bg-alunos{
   background-image: url(../public/bg-alunos.jpg);
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
