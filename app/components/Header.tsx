@@ -7,7 +7,7 @@ const letterVariants = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.03, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }
+    transition: { delay: i * 0.03, duration: 0.8 }
   })
 };
 
@@ -17,7 +17,6 @@ export const Header = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-black">
-      {/* Minimal light effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-red-700/5 via-transparent to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-700/20 to-transparent" />
       
@@ -61,12 +60,12 @@ export const Header = () => {
           <p className="text-xs text-gray-600 mt-4 tracking-wider">CREF 042105-G/RS</p>
         </motion.div>
 
-        {/* Scroll indicator */}
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
+          <div className="w-px h-16 bg-gradient-to-b from-red-700/50 to-transparent" />
         </motion.div>
       </div>
     </section>
