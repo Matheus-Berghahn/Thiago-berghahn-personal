@@ -34,7 +34,7 @@ export const Header = () => {
                 initial="hidden"
                 animate="visible"
                 variants={letterVariants}
-                className="text-4xl md:text-7xl lg:text-8xl font-light tracking-tight inline-block text-white"
+                className="text-3xl md:text-7xl lg:text-8xl font-light tracking-tight inline-block text-white"
               >
                 {char === ' ' ? '\u00A0' : char}
               </motion.span>
