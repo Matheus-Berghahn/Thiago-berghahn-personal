@@ -1,0 +1,1 @@
+export type UserRegion = 'local' | 'online' | null;
