@@ -65,7 +65,6 @@ export const Header = () => {
           transition={{ duration: 2, repeat: Infinity }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
-          <div className="w-px h-16 bg-gradient-to-b from-red-700/50 to-transparent" />
         </motion.div>
       </div>
     </section>
