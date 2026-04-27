@@ -28,7 +28,10 @@ export const Modal = ({ isOpen, onSelect }: ModalProps) => {
               <div className="absolute -top-1 left-0 w-12 h-px bg-red-700" />
               <h2 className="text-2xl font-light text-white mb-3 tracking-wide">Localização</h2>
               <p className="text-gray-500 text-sm mb-8 leading-relaxed">
-                Selecione sua região para uma experiência personalizada
+                Para uma experiência personalizada, responda a seguinte pergunta:
+              </p>
+              <p className="text-white text-base mb-8 font-light">
+                Você é de Estância Velha/RS ou região?
               </p>
             </div>
             
@@ -37,7 +40,7 @@ export const Modal = ({ isOpen, onSelect }: ModalProps) => {
                 onClick={() => onSelect('local')}
                 className="w-full px-6 py-4 bg-transparent border border-red-700/50 hover:bg-red-700/10 text-white transition-all duration-300 text-left group"
               >
-                <span className="text-sm tracking-wide">Região de Estância Velha/RS</span>
+                <span className="text-sm tracking-wide">Sim</span>
                 <span className="block text-xs text-gray-500 mt-1 group-hover:text-red-400 transition-colors">Atendimento presencial</span>
               </button>
               
@@ -45,7 +48,7 @@ export const Modal = ({ isOpen, onSelect }: ModalProps) => {
                 onClick={() => onSelect('online')}
                 className="w-full px-6 py-4 bg-transparent border border-neutral-700 hover:border-red-700/30 text-white transition-all duration-300 text-left group"
               >
-                <span className="text-sm tracking-wide">Outras regiões</span>
+                <span className="text-sm tracking-wide">Não</span>
                 <span className="block text-xs text-gray-500 mt-1 group-hover:text-red-400 transition-colors">Consultoria online</span>
               </button>
             </div>

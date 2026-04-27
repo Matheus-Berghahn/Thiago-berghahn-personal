@@ -16,41 +16,51 @@ export const AboutSection = () => {
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
           }}
-          className="bg-neutral-800/50 p-10"
+          className="bg-neutral-800/50 p-10 relative"
         >
           <div className="absolute top-0 left-0 w-px h-12 bg-red-700/30" />
           
-          <div className="space-y-8">
-            <div className="flex items-center gap-4">
-              <div className="w-8 h-px bg-red-700/50" />
-              <div>
-                <h3 className="text-white text-lg font-light tracking-wide">Bacharel em Educação Física</h3>
-                <p className="text-gray-500 text-sm">Universidade Feevale</p>
+          <div className="space-y-10">
+            {/* Primeira linha: dois itens lado a lado */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Bacharel em Educação Física */}
+              <div className="flex items-center gap-4">
+                <div className="w-8 h-px bg-red-700/50" />
+                <div>
+                  <h3 className="text-white text-lg font-light tracking-wide">Bacharel em Educação Física</h3>
+                  <p className="text-gray-500 text-sm mt-1">Universidade Feevale</p>
+                </div>
+              </div>
+              
+              {/* 5+ anos de experiência em treinamento */}
+              <div className="flex items-center gap-4">
+                <div className="w-8 h-px bg-red-700/50" />
+                <div>
+                  <h3 className="text-white text-lg font-light tracking-wide">5+ anos de experiência em treinamento</h3>
+                  <p className="text-gray-500 text-sm mt-1">teoria e prática a teu favor</p>
+                </div>
               </div>
             </div>
             
-            <div className="flex flex-wrap gap-3">
-              <div className="bg-neutral-700 px-4 py-1.5">
-                <span className="text-red-600 text-sm">5+ anos de experiência</span>
+            {/* Segunda linha: dois itens lado a lado */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Especialista em musculação */}
+              <div className="flex items-center gap-4">
+                <div className="w-8 h-px bg-red-700/50" />
+                <div>
+                  <h3 className="text-white text-lg font-light tracking-wide">Especialista em musculação</h3>
+                  <p className="text-gray-500 text-sm mt-1">hipertrofia e emagrecimento</p>
+                </div>
               </div>
-              <div className="bg-neutral-700 px-4 py-1.5">
-                <span className="text-red-600 text-sm">Especialista em musculação</span>
+              
+              {/* Reabilitação de lesões */}
+              <div className="flex items-center gap-4">
+                <div className="w-8 h-px bg-red-700/50" />
+                <div>
+                  <h3 className="text-white text-lg font-light tracking-wide">Reabilitação de lesões</h3>
+                  <p className="text-gray-500 text-sm mt-1">joelho, tornozelo, quadril, coluna</p>
+                </div>
               </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              {["Reabilitação de lesões", "Emagrecimento", "Hipertrofia"].map((item, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ x: 5 }}
-                  className="group"
-                >
-                  <div className="flex items-center gap-3 p-3 bg-neutral-700/20">
-                    <div className="w-4 h-px bg-red-700/50 group-hover:w-6 transition-all" />
-                    <span className="text-gray-400 text-sm font-light">{item}</span>
-                  </div>
-                </motion.div>
-              ))}
             </div>
           </div>
         </motion.div>
