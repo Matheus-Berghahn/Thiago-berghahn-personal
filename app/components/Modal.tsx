@@ -41,7 +41,6 @@ export const Modal = ({ isOpen, onSelect }: ModalProps) => {
                 className="w-full px-6 py-4 bg-transparent border border-red-700/50 hover:bg-red-700/10 text-white transition-all duration-300 text-left group"
               >
                 <span className="text-sm tracking-wide">Sim</span>
-                <span className="block text-xs text-gray-500 mt-1 group-hover:text-red-400 transition-colors">Atendimento presencial</span>
               </button>
               
               <button
@@ -49,7 +48,6 @@ export const Modal = ({ isOpen, onSelect }: ModalProps) => {
                 className="w-full px-6 py-4 bg-transparent border border-neutral-700 hover:border-red-700/30 text-white transition-all duration-300 text-left group"
               >
                 <span className="text-sm tracking-wide">Não</span>
-                <span className="block text-xs text-gray-500 mt-1 group-hover:text-red-400 transition-colors">Consultoria online</span>
               </button>
             </div>
           </motion.div>
