@@ -13,6 +13,7 @@ import { ServicesSection } from './components/ServicesSection';
 import { PresencialDetails } from './components/PresencialDetails';
 import { OnlineDetails } from './components/OnlineDetails';
 import { FAQSection } from './components/FAQSection';
+import { BeforeAfterCarousel } from './components/BeforeAfterCarousel';
 import { Footer } from './components/Footer';
 import { UserRegion } from './types';
 
@@ -67,6 +68,7 @@ export default function Home() {
         <GallerySection />
         <ServicesSection onCardClick={handleCardClick} />
         <FAQSection />
+        <BeforeAfterCarousel />
         <Footer 
           onPresencialClick={() => handleCardClick('presencial')}
           onOnlineClick={() => handleCardClick('online')}
