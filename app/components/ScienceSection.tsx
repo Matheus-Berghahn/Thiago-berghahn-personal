@@ -18,7 +18,7 @@ export const ScienceSection = () => {
     },
     {
       title: 'Suporte Integral',
-      desc: 'Do planejamento à execução, com correções contínuas.'
+      desc: 'Acompanhamento do planejamento à execução. Com correções ao vivo no presencial e feedbacks diários no online'
     },
     {
       title: 'Foco em resultado sustentável',
@@ -26,7 +26,7 @@ export const ScienceSection = () => {
     },
     {
       title: 'Certeza de resultado',
-      desc: 'Com o meu acompanhamento, você tem a certeza de que está no caminho certo.'
+      desc: 'Presencial ou online, meu acompanhamento garante que você está no caminho certo. Por quê? Tudo é embasado na literatura científica.'
     }
   ];
 
@@ -55,12 +55,12 @@ export const ScienceSection = () => {
             >
               <div className="md:col-span-1">
                 <div className="flex items-center gap-2 md:gap-3">
-                  <span className="text-red-600 text-xs md:text-sm">{index + 1}.</span>
-                  <span className="text-white text-xs md:text-sm font-light tracking-wide">{item.title}</span>
+                  <span className="text-red-600 text-lg md:text-sm">{index + 1}.</span>
+                  <span className="text-white text-lg md:text-sm font-light tracking-wide">{item.title}</span>
                 </div>
               </div>
               <div className="md:col-span-2">
-                <p className="text-gray-500 text-xs md:text-sm pl-5 md:pl-0">{item.desc}</p>
+                <p className="text-gray-500 text-lg md:text-sm pl-5 md:pl-0">{item.desc}</p>
               </div>
             </motion.div>
           ))}

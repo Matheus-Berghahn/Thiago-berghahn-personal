@@ -8,7 +8,7 @@ export const HeroSection = () => {
   const { ref, controls } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="bg-black py-24 w-full">
+    <section ref={ref} className="bg-black pt-24 w-full">
       <div className="max-w-5xl mx-auto px-6 bg-alunos ">
         <motion.div
           initial="hidden"
@@ -32,10 +32,10 @@ export const HeroSection = () => {
               />
               
               {/* Minimal border lines */}
-              <div className="absolute inset-0 pointer-events-none">
+              {/* <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-px bg-white/5" />
                 <div className="absolute bottom-0 left-0 w-full h-px bg-white/5" />
-              </div>
+              </div> */}
             </div>
           </div>
           

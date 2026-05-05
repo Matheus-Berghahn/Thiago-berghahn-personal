@@ -47,7 +47,7 @@ export const FAQSection = () => {
             <span className="text-red-700 text-xs tracking-widest">DÚVIDAS FREQUENTES</span>
             <div className="w-6 h-px bg-red-700" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-light tracking-tight">Perguntas Frequentes</h2>
+          <h2 className="text-3xl md:text-5xl font-light tracking-tight text-white">Perguntas Frequentes</h2>
           <div className="w-12 h-px bg-red-700/30 mx-auto mt-6" />
         </div>
         
@@ -58,8 +58,8 @@ export const FAQSection = () => {
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-neutral-700/50 transition-colors"
               >
-                <span className="text-white text-sm font-light tracking-wide">{faq.question}</span>
-                <span className="text-red-600 text-xl">{openIndex === index ? '−' : '+'}</span>
+                <span className="text-white text-lg font-light tracking-wide">{faq.question}</span>
+                <span className="text-red-600 text-3xl">{openIndex === index ? '−' : '+'}</span>
               </button>
               <AnimatePresence>
                 {openIndex === index && (
@@ -70,7 +70,7 @@ export const FAQSection = () => {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-4 text-gray-500 text-sm leading-relaxed">
+                    <div className="px-6 pb-4 text-gray-500 text-mg leading-relaxed">
                       {faq.answer}
                     </div>
                   </motion.div>

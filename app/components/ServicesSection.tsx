@@ -21,7 +21,7 @@ export const ServicesSection = ({ onCardClick }: ServicesSectionProps) => {
             <div className="w-4 md:w-6 h-px bg-red-700" />
           </div>
           
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight text-white">Comece sua jornada</h2>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight text-white">Descubra a modalidade ideal para seu perfil</h2>
           <div className="w-12 h-px bg-red-700/30 mx-auto mt-4 md:mt-6" />
         </div>
         

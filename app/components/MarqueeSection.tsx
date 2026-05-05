@@ -1,36 +1,38 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import Marquee from 'react-fast-marquee';
 
 export const MarqueeSection = () => {
   const items = [
     "REABILITAÇÃO DE LESÕES",
     "EMAGRECIMENTO",
     "HIPERTROFIA",
-    "RESULTADOS GARANTIDOS",
-    "ACOMPANHAMENTO CIENTÍFICO"
+    "SAÚDE"
   ];
 
   return (
-    <section className="bg-neutral-900 py-8 overflow-hidden">
-      <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-neutral-900 via-transparent to-neutral-900 z-10" />
-        
-        <motion.div
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          className="flex whitespace-nowrap"
-        >
-          {[...items, ...items, ...items].map((item, index) => (
-            <div key={index} className="mx-4 inline-flex items-center gap-4">
-              <div className="w-2 h-px bg-red-700/50" />
-              <span className="text-sm md:text-base font-light tracking-wide text-gray-400">
-                {item}
-              </span>
-            </div>
-          ))}
-        </motion.div>
-      </div>
+    <section className="bg-neutral-900 py-6 md:py-8 overflow-hidden">
+      <Marquee 
+        speed={45}
+        loop={0}
+        gradient={true}
+        gradientColor="#050505"
+        gradientWidth={50}
+        delay={0}
+      >
+        {/* Repete 4 vezes para desktop também ficar cheio */}
+        {[...items, ...items, ...items, ...items].map((item, index) => (
+          <div 
+            key={index} 
+            className="mx-2 md:mx-5 inline-flex items-center gap-3 md:gap-6"
+          >
+            <div className="w-1.5 md:w-2 h-px bg-red-700/50" />
+            <span className="text-lg md:text-base font-light tracking-wide text-gray-400 whitespace-nowrap">
+              {item}
+            </span>
+          </div>
+        ))}
+      </Marquee>
     </section>
   );
 };

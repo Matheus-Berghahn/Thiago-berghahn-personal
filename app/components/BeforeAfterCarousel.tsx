@@ -30,9 +30,12 @@ const slides: Slide[] = [
 export const BeforeAfterCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [position, setPosition] = useState(50);
-
+  const [progress, setProgress] = useState(0);
+  
   const containerRef = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
+  const autoplayIntervalRef = useRef<NodeJS.Timeout>();
+  const progressIntervalRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
     setPosition(50);
@@ -47,15 +50,80 @@ export const BeforeAfterCarousel = () => {
     setPosition(value);
   };
 
+  // Função para resetar o progresso e iniciar animação
+  const startProgress = () => {
+    setProgress(0);
+    const startTime = Date.now();
+    
+    if (progressIntervalRef.current) {
+      clearInterval(progressIntervalRef.current);
+    }
+    
+    progressIntervalRef.current = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const newProgress = (elapsed / 4000) * 100;
+      
+      if (newProgress >= 100) {
+        clearInterval(progressIntervalRef.current);
+        setProgress(100);
+      } else {
+        setProgress(newProgress);
+      }
+    }, 16); // Atualiza ~60fps para animação suave
+  };
+
+  // Função para iniciar o autoplay
+  const startAutoplay = () => {
+    if (autoplayIntervalRef.current) {
+      clearInterval(autoplayIntervalRef.current);
+    }
+    
+    startProgress();
+    
+    autoplayIntervalRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      startProgress(); // Reinicia a barra de progresso para o próximo slide
+    }, 4000);
+  };
+
+  // Parar autoplay
+  const stopAutoplay = () => {
+    if (autoplayIntervalRef.current) {
+      clearInterval(autoplayIntervalRef.current);
+    }
+    if (progressIntervalRef.current) {
+      clearInterval(progressIntervalRef.current);
+    }
+    setProgress(0);
+  };
+
+  // Iniciar autoplay quando o componente montar
+  useEffect(() => {
+    startAutoplay();
+    
+    return () => {
+      stopAutoplay();
+    };
+  }, []);
+
+  // Quando o slide mudar manualmente, resetar o autoplay
+  const handleSlideChange = (newSlide: number) => {
+    setCurrentSlide(newSlide);
+    stopAutoplay();
+    startAutoplay();
+  };
+
   // Mouse events (desktop)
   useEffect(() => {
     const move = (e: MouseEvent) => {
       if (!dragging.current) return;
+      stopAutoplay(); // Para autoplay quando usuário interage
       updateSlider(e.clientX);
     };
 
     const up = () => {
       dragging.current = false;
+      startAutoplay(); // Reinicia autoplay após interação
     };
 
     window.addEventListener('mousemove', move);
@@ -72,12 +140,14 @@ export const BeforeAfterCarousel = () => {
     const touchMove = (e: TouchEvent) => {
       if (!dragging.current) return;
       e.preventDefault();
+      stopAutoplay(); // Para autoplay quando usuário interage
       const touch = e.touches[0];
       updateSlider(touch.clientX);
     };
 
     const touchEnd = () => {
       dragging.current = false;
+      startAutoplay(); // Reinicia autoplay após interação
     };
 
     window.addEventListener('touchmove', touchMove, { passive: false });
@@ -114,11 +184,10 @@ export const BeforeAfterCarousel = () => {
         <div className="flex justify-center items-center gap-6">
           {/* left arrow */}
           <button
-            onClick={() =>
-              setCurrentSlide(
-                (prev) => (prev - 1 + slides.length) % slides.length
-              )
-            }
+            onClick={() => {
+              stopAutoplay();
+              handleSlideChange((currentSlide - 1 + slides.length) % slides.length);
+            }}
             className="
               hidden md:flex
               w-10 h-10
@@ -190,6 +259,14 @@ export const BeforeAfterCarousel = () => {
             "
             />
 
+            {/* Barra de progresso vermelha */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 z-40 bg-red-900/30">
+              <div 
+                className="h-full bg-red-700 transition-all duration-[16ms] linear"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+
             {/* labels */}
             <div className="absolute top-5 left-5 z-30">
               <div className="bg-black/75 px-2 py-2 backdrop-blur-sm">
@@ -231,10 +308,12 @@ export const BeforeAfterCarousel = () => {
               <button
                 onMouseDown={() => {
                   dragging.current = true;
+                  stopAutoplay();
                 }}
                 onTouchStart={(e) => {
                   e.preventDefault();
                   dragging.current = true;
+                  stopAutoplay();
                 }}
                 className="
                 absolute
@@ -283,9 +362,10 @@ export const BeforeAfterCarousel = () => {
 
           {/* right arrow */}
           <button
-            onClick={() =>
-              setCurrentSlide((prev) => (prev + 1) % slides.length)
-            }
+            onClick={() => {
+              stopAutoplay();
+              handleSlideChange((currentSlide + 1) % slides.length);
+            }}
             className="
               hidden md:flex
               w-14 h-14
@@ -315,16 +395,20 @@ export const BeforeAfterCarousel = () => {
         {/* mobile arrows */}
         <div className="md:hidden flex justify-center gap-4 mt-6">
           <button
-            onClick={() =>
-              setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-            }
+            onClick={() => {
+              stopAutoplay();
+              handleSlideChange((currentSlide - 1 + slides.length) % slides.length);
+            }}
             className="border border-neutral-700 px-6 py-3 text-white"
           >
             Anterior
           </button>
 
           <button
-            onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
+            onClick={() => {
+              stopAutoplay();
+              handleSlideChange((currentSlide + 1) % slides.length);
+            }}
             className="border border-neutral-700 px-6 py-3 text-white"
           >
             Próximo
@@ -336,7 +420,10 @@ export const BeforeAfterCarousel = () => {
           {slides.map((_, i) => (
             <button
               key={i}
-              onClick={() => setCurrentSlide(i)}
+              onClick={() => {
+                stopAutoplay();
+                handleSlideChange(i);
+              }}
               className={
                 i === currentSlide
                   ? 'w-10 h-px bg-red-700'

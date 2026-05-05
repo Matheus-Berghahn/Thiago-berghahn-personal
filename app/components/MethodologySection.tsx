@@ -8,9 +8,9 @@ export const MethodologySection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const features = [
-    "Confie no trabalho de um PROFISSIONAL da Educação Física.",
-    "METODOLOGIA SISTEMÁTICA que permite visualizar sua evolução de forma concreta.",
-    "Todos os processos do treinamento embasados em CIÊNCIA!"
+    "Confie no trabalho de um <span class='text-red-600'>PROFISSIONAL</span> da Educação Física.",
+    "<span class='text-red-600'>METODOLOGIA SISTEMÁTICA</span> que permite visualizar sua evolução de forma concreta.",
+    "Todos os processos do treinamento embasados em <span class='text-red-600'>CIÊNCIA</span>!"
   ];
 
   return (
@@ -23,14 +23,18 @@ export const MethodologySection = () => {
             <div className="w-4 md:w-6 h-px bg-red-700" />
           </div>
           
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight text-white">
-            TREINO INTELIGENTE <span className="text-red-700 block md:inline">→</span> RESULTADO COM CIÊNCIA
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight text-white text-center">
+            TREINO INTELIGENTE
+            <div className="my-2 md:my-4">
+              <span className="text-red-700 block">↓</span>
+            </div>
+            RESULTADO COM CIÊNCIA
           </h2>
           <div className="w-12 h-px bg-red-700/30 mx-auto mt-4 md:mt-6" />
         </div>
         
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
-          <p className="text-gray-400 text-sm md:text-base leading-relaxed px-2">
+          <p className="text-gray-400 text-xl md:text-2xl leading-relaxed px-2">
             Sem fadiga desnecessária, sem longas horas na academia. Conheça o{' '}
             <span className="text-red-600 font-semibold">TREINO INTELIGENTE</span>{' '}
             que vai extrair o máximo do seu potencial sem desperdiçar seu tempo.
@@ -47,7 +51,10 @@ export const MethodologySection = () => {
               className="bg-neutral-800 p-6 md:p-8"
             >
               <div className="w-8 h-px bg-red-700/30 mb-4 md:mb-6" />
-              <p className="text-gray-300 text-xs md:text-sm leading-relaxed">{feature}</p>
+              <p 
+                className="text-gray-300 text-xl md:text-xl leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: feature }}
+              />
             </motion.div>
           ))}
         </div>
