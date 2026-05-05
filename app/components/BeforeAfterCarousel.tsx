@@ -34,8 +34,8 @@ export const BeforeAfterCarousel = () => {
   
   const containerRef = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
-const autoplayIntervalRef = useRef<NodeJS.Timeout | null>(null);
-const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const autoplayIntervalRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
+  const progressIntervalRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
 
   useEffect(() => {
     setPosition(50);
@@ -64,7 +64,9 @@ const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
       const newProgress = (elapsed / 4000) * 100;
       
       if (newProgress >= 100) {
-        clearInterval(progressIntervalRef.current);
+        if (progressIntervalRef.current) {
+          clearInterval(progressIntervalRef.current);
+        }
         setProgress(100);
       } else {
         setProgress(newProgress);
@@ -90,9 +92,11 @@ const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const stopAutoplay = () => {
     if (autoplayIntervalRef.current) {
       clearInterval(autoplayIntervalRef.current);
+      autoplayIntervalRef.current = undefined;
     }
     if (progressIntervalRef.current) {
       clearInterval(progressIntervalRef.current);
+      progressIntervalRef.current = undefined;
     }
     setProgress(0);
   };
