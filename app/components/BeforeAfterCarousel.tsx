@@ -34,8 +34,8 @@ export const BeforeAfterCarousel = () => {
   
   const containerRef = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
-  const autoplayIntervalRef = useRef<NodeJS.Timeout>();
-  const progressIntervalRef = useRef<NodeJS.Timeout>();
+const autoplayIntervalRef = useRef<NodeJS.Timeout | null>(null);
+const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     setPosition(50);
