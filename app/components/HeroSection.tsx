@@ -40,21 +40,21 @@ export const HeroSection = () => {
           </div>
           
           {/* Floating badges */}
-          <motion.div
+          {/* <motion.div
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 3, repeat: Infinity }}
             className="absolute -top-6 -right-6 bg-red-700 px-4 py-2"
           >
             <span className="text-white text-xs tracking-wider">+5 ANOS</span>
-          </motion.div>
+          </motion.div> */}
           
-          <motion.div
+          {/* <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 3.5, repeat: Infinity, delay: 0.5 }}
             className="absolute -bottom-6 -left-6 bg-neutral-800 px-4 py-2 border-l-2 border-red-700/50"
           >
             <span className="text-red-600 text-xs tracking-wider">ESPECIALISTA</span>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>
