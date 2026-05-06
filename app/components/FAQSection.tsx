@@ -18,7 +18,7 @@ const faqs: FAQItem[] = [
     answer: "Não precisa. Existem inúmeros exercícios para cada grupo muscular. Vou sempre indicar o melhor para você."
   },
   {
-    question: "Tenho dor no ombro/coluna/quadril/joelho/tornozelo. Posso treinar?",
+    question: "Tenho dor no ombro, coluna, quadril, joelho ou tornozelo. Posso treinar?",
     answer: "Sim. Meu método é baseado em reabilitação ativa. Fortalecemos sem agredir a lesão."
   },
   {
@@ -58,8 +58,8 @@ export const FAQSection = () => {
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-neutral-700/50 transition-colors"
               >
-                <span className="text-white text-lg font-light tracking-wide">{faq.question}</span>
-                <span className="text-red-600 text-3xl">{openIndex === index ? '−' : '+'}</span>
+                <span className="text-white text-base font-light tracking-wide">{faq.question}</span>
+                <span className="text-red-600 text-2xl">{openIndex === index ? '−' : '+'}</span>
               </button>
               <AnimatePresence>
                 {openIndex === index && (
