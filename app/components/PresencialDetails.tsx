@@ -182,7 +182,7 @@ export const PresencialDetails = ({ onBack }: PresencialDetailsProps) => {
             </div>
           </div>
 
-          <div className="bg-neutral-800 p-8">
+          <div className="bg-neutral-800 p-8 justify-center flex-col w-full">
             <p className="text-gray-400 text-lg mb-4 text-center">
               <span className="text-gray-300 ">Vagas presenciais limitadas por horário.</span> Avaliação gratuita exclusiva para alunos presenciais.
             </p>
@@ -190,7 +190,7 @@ export const PresencialDetails = ({ onBack }: PresencialDetailsProps) => {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3 bg-red-700 hover:bg-red-800 text-white text-center text-lg tracking-wide transition-colors"
+              className="inline-block px-8 py-3 mx-0 md:mx-72 bg-red-700 hover:bg-red-800 text-white text-center text-lg tracking-wide transition-colors"
             >
               QUERO AGENDAR MINHA AULA EXPERIMENTAL
             </a>

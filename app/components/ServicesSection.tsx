@@ -11,6 +11,18 @@ export const ServicesSection = ({ onCardClick }: ServicesSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
+  const handleCardClick = (type: 'presencial' | 'online') => {
+    onCardClick(type);
+    
+    // Rolar suavemente até o início da seção correspondente
+    setTimeout(() => {
+      const element = document.getElementById(`${type}-section`);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
   return (
     <section ref={ref} className="bg-neutral-900 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -27,90 +39,90 @@ export const ServicesSection = ({ onCardClick }: ServicesSectionProps) => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           {/* Presencial Card */}
-<motion.div
-  initial={{ opacity: 0, x: -30 }}
-  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-  transition={{ duration: 0.6 }}
-  whileHover={{ y: -5 }}
-  className="group"
->
-  <div className="relative bg-neutral-800 p-6 md:p-8 lg:p-10">
-    <div className="absolute top-0 left-0 w-8 md:w-12 h-px bg-red-700/30 group-hover:w-12 md:group-hover:w-24 transition-all duration-500" />
-    
-    <div className="mt-6 md:mt-8">
-      <div className="w-6 md:w-8 h-px bg-red-700/30 mb-6 md:mb-8" />
-      <h3 className="text-xl md:text-2xl font-light text-white mb-6 md:mb-8 tracking-wide">TREINAMENTO PRESENCIAL</h3>
-      
-      <div className="mb-6 md:mb-8">
-        <p className="text-red-600 text-lg md:text-xs tracking-wider mb-3 md:mb-4">IDEAL PARA QUEM:</p>
-        <ul className="space-y-5 md:space-y-3">
-          <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
-            <span className="text-red-700 flex-shrink-0">—</span>
-            <span>Busca <span className="text-gray-300">evolução acelerada e correção profissional</span> a cada repetição</span>
-          </li>
-          <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
-            <span className="text-red-700 flex-shrink-0">—</span>
-            <span>Possui <span className="text-gray-300">alguma lesão ou especificidade</span> (ombro, joelho, coluna) e quer a <span className="text-gray-300">segurança de treinar sem dor</span></span>
-          </li>
-          <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
-            <span className="text-red-700 flex-shrink-0">—</span>
-            <span>Tem <span className="text-gray-300">dificuldade de manter a constância</span> na academia e precisa de um <span className="text-gray-300">acompanhamento que cobre e motive</span> de verdade</span>
-          </li>
-        </ul>
-      </div>
-      
-      <button
-        onClick={() => onCardClick('presencial')}
-        className="w-full group/btn relative bg-red-700/70 border border-white hover:border-red-700/50 px-4 md:px-6 py-4 md:py-3 text-white text-md md:text-sm tracking-wide transition-all duration-300"
-      >
-        Quero Treinar Presencialmente
-      </button>
-    </div>
-  </div>
-</motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+            transition={{ duration: 0.6 }}
+            whileHover={{ y: -5 }}
+            className="group h-full"
+          >
+            <div className="relative bg-neutral-800 p-6 md:p-8 lg:p-10 h-full flex flex-col">
+              <div className="absolute top-0 left-0 w-8 md:w-12 h-px bg-red-700/30 group-hover:w-12 md:group-hover:w-24 transition-all duration-500" />
+              
+              <div className="mt-6 md:mt-8 flex flex-col h-full">
+                <div className="w-6 md:w-8 h-px bg-red-700/30 mb-6 md:mb-8" />
+                <h3 className="text-xl md:text-2xl font-light text-white mb-6 md:mb-8 tracking-wide">TREINAMENTO PRESENCIAL</h3>
+                
+                <div className="mb-6 md:mb-8 flex-grow">
+                  <p className="text-red-600 text-lg md:text-xs tracking-wider mb-3 md:mb-4">IDEAL PARA QUEM:</p>
+                  <ul className="space-y-5 md:space-y-3">
+                    <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
+                      <span className="text-red-700 flex-shrink-0">—</span>
+                      <span>Busca <span className="text-gray-300">evolução acelerada e correção profissional</span> a cada repetição</span>
+                    </li>
+                    <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
+                      <span className="text-red-700 flex-shrink-0">—</span>
+                      <span>Possui <span className="text-gray-300">alguma lesão ou especificidade</span> (ombro, joelho, coluna) e quer a <span className="text-gray-300">segurança de treinar sem dor</span></span>
+                    </li>
+                    <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
+                      <span className="text-red-700 flex-shrink-0">—</span>
+                      <span>Tem <span className="text-gray-300">dificuldade de manter a constância</span> na academia e precisa de um <span className="text-gray-300">acompanhamento que cobre e motive</span> de verdade</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <button
+                  onClick={() => handleCardClick('presencial')}
+                  className="w-full group/btn relative bg-red-700/70 border border-white hover:border-red-700/50 px-4 md:px-6 py-4 md:py-3 text-white text-md md:text-sm tracking-wide transition-all duration-300 mt-auto"
+                >
+                  Quero Treinar Presencialmente
+                </button>
+              </div>
+            </div>
+          </motion.div>
 
           {/* Online Card */}
-<motion.div
-  initial={{ opacity: 0, x: 30 }}
-  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-  transition={{ duration: 0.6, delay: 0.2 }}
-  whileHover={{ y: -5 }}
-  className="group"
->
-  <div className="relative bg-neutral-800 p-6 md:p-8 lg:p-10">
-    <div className="absolute top-0 left-0 w-8 md:w-12 h-px bg-red-700/30 group-hover:w-12 md:group-hover:w-24 transition-all duration-500" />
-    
-    <div className="mt-6 md:mt-8">
-      <div className="w-6 md:w-8 h-px bg-red-700/30 mb-6 md:mb-8" />
-      <h3 className="text-xl md:text-2xl font-light text-white mb-6 md:mb-8 tracking-wide">CONSULTORIA ONLINE  + BÔNUS PRESENCIAIS</h3>
-      
-      <div className="mb-6 md:mb-8">
-        <p className="text-red-600 text-lg md:text-xs tracking-wider mb-3 md:mb-4">IDEAL PARA QUEM:</p>
-        <ul className="space-y-5 md:space-y-3">
-          <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
-            <span className="text-red-700 flex-shrink-0">—</span>
-            <span>Quer <span className="text-gray-300">direcionamento profissional</span> para <span className="text-gray-300">maximizar resultados</span> e <span className="text-gray-300">parar de perder tempo andando sem direção</span> na academia</span>
-          </li>
-          <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
-            <span className="text-red-700 flex-shrink-0">—</span>
-            <span>Já tem <span className="text-gray-300">familiaridade com a academia</span> mas sente que <span className="text-gray-300">estagnou</span> – quer evoluir mais mesmo treinando sozinho</span>
-          </li>
-          <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
-            <span className="text-red-700 flex-shrink-0">—</span>
-            <span>Não quer depender de <span className="text-gray-300">treinos genéricos</span> e busca o <span className="text-gray-300">caminho mais curto e certeiro</span> que só a <span className="text-gray-300">ciência</span> proporciona</span>
-          </li>
-        </ul>
-      </div>
-      
-      <button
-        onClick={() => onCardClick('online')}
-        className="w-full group/btn relative bg-red-700/70 border border-white hover:border-red-700/50 px-4 md:px-6 py-4 md:py-3 text-white text-md md:text-sm tracking-wide transition-all duration-300"
-      >
-        Consultoria Online
-      </button>
-    </div>
-  </div>
-</motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            whileHover={{ y: -5 }}
+            className="group h-full"
+          >
+            <div className="relative bg-neutral-800 p-6 md:p-8 lg:p-10 h-full flex flex-col">
+              <div className="absolute top-0 left-0 w-8 md:w-12 h-px bg-red-700/30 group-hover:w-12 md:group-hover:w-24 transition-all duration-500" />
+              
+              <div className="mt-6 md:mt-8 flex flex-col h-full">
+                <div className="w-6 md:w-8 h-px bg-red-700/30 mb-6 md:mb-8" />
+                <h3 className="text-xl md:text-2xl font-light text-white mb-6 md:mb-8 tracking-wide">CONSULTORIA ONLINE  + BÔNUS PRESENCIAIS</h3>
+                
+                <div className="mb-6 md:mb-8 flex-grow">
+                  <p className="text-red-600 text-lg md:text-xs tracking-wider mb-3 md:mb-4">IDEAL PARA QUEM:</p>
+                  <ul className="space-y-5 md:space-y-3">
+                    <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
+                      <span className="text-red-700 flex-shrink-0">—</span>
+                      <span>Quer <span className="text-gray-300">direcionamento profissional</span> para <span className="text-gray-300">maximizar resultados</span> e <span className="text-gray-300">parar de perder tempo andando sem direção</span> na academia</span>
+                    </li>
+                    <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
+                      <span className="text-red-700 flex-shrink-0">—</span>
+                      <span>Já tem <span className="text-gray-300">familiaridade com a academia</span> mas sente que <span className="text-gray-300">estagnou</span> – quer evoluir mais mesmo treinando sozinho</span>
+                    </li>
+                    <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
+                      <span className="text-red-700 flex-shrink-0">—</span>
+                      <span>Não quer depender de <span className="text-gray-300">treinos genéricos</span> e busca o <span className="text-gray-300">caminho mais curto e certeiro</span> que só a <span className="text-gray-300">ciência</span> proporciona</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <button
+                  onClick={() => handleCardClick('online')}
+                  className="w-full group/btn relative bg-red-700/70 border border-white hover:border-red-700/50 px-4 md:px-6 py-4 md:py-3 text-white text-md md:text-sm tracking-wide transition-all duration-300 mt-auto"
+                >
+                  Consultoria Online
+                </button>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

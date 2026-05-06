@@ -131,16 +131,10 @@ export const OnlineDetails = ({ onBack }: OnlineDetailsProps) => {
             </div>
           </div>
 
-          {/* Tempo mínimo - card estilo "Onde atendo" do Presencial */}
-          <div>
-            <h2 className="text-2xl font-light text-white mb-6">Tempo mínimo</h2>
-            <div className="bg-neutral-800 p-6">
-              <p className="text-white text-center text-lg">2 meses <span className="text-gray-400">(período mínimo para evolução real)</span></p>
-            </div>
-          </div>
+          
 
           {/* Investimento e CTA - IDÊNTICO ao Presencial */}
-          <div className="bg-neutral-800 p-8">
+          <div className="bg-neutral-800 p-8 flex justify-center flex-col w-full">
             <p className="text-gray-400 text-lg mb-4 text-center">
               <span className="text-gray-300">Investimento (a partir de 2 meses)</span>
             </p>
@@ -148,7 +142,7 @@ export const OnlineDetails = ({ onBack }: OnlineDetailsProps) => {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block w-full md:w-auto px-8 py-3 bg-red-700 hover:bg-red-800 text-white text-center text-lg tracking-wide transition-colors"
+              className="inline-block px-8 mx-0 md:mx-72 py-3 bg-red-700 hover:bg-red-800 text-white text-center text-lg tracking-wide transition-colors"
             >
               QUERO MINHA CONSULTORIA ONLINE (COM BÔNUS)
             </a>
