@@ -16,7 +16,7 @@ export const Footer = ({ onPresencialClick, onOnlineClick }: FooterProps) => {
             <div className="w-6 h-px bg-red-700" />
           </div>
           
-          <h3 className="text-2xl md:text-3xl font-light text-white mb-4">Vagas presenciais limitadas</h3>
+          <h3 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight text-white text-center mb-4">VAGAS PRESENCIAIS LIMITADAS</h3>
           <p className="text-gray-500 text-sm mb-6">Garanta seu horário. Avaliação gratuita para alunos presenciais.</p>
           
           <p className="text-white text-sm tracking-wide mb-8">ESCOLHA SEU CAMINHO E FALE COMIGO DIRETO NO WHATSAPP</p>

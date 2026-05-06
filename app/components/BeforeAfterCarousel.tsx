@@ -178,8 +178,8 @@ export const BeforeAfterCarousel = () => {
             <div className="w-6 h-px bg-red-700" />
           </div>
 
-          <h2 className="text-white text-4xl md:text-5xl font-light tracking-tight">
-            Resultados que inspiram
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight text-white text-center">
+            RESULTADOS QUE INSPIRAM
           </h2>
 
           <div className="w-14 h-px bg-red-700/40 mx-auto mt-6" />

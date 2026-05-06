@@ -18,20 +18,20 @@ const faqs: FAQItem[] = [
     answer: "Não precisa. Existem inúmeros exercícios para cada grupo muscular. Vou sempre indicar o melhor para você."
   },
   {
-    question: "Tenho dor no joelho/ombro/lombar. Posso treinar?",
+    question: "Tenho dor no ombro/coluna/quadril/joelho/tornozelo. Posso treinar?",
     answer: "Sim. Meu método é baseado em reabilitação ativa. Fortalecemos sem agredir a lesão."
   },
   {
-    question: "Minha rotina é muito louca. Consigo encaixar?",
-    answer: "Sim. Ajustamos os treinos para a sua realidade. Eu me adapto a você."
+    question: "Minha rotina é muito louca, é possível encaixar os treinos nela?",
+    answer: "Sim. O treinamento é ajustado para a sua realidade."
   },
   {
     question: "Preciso treinar todos os dias?",
-    answer: "Não. A maioria treina 3 a 4 vezes por semana. Consistência, não volume exagerado."
+    answer: "Não. A maioria dos meus alunos treinam de 3 a 4 vezes por semana. Consistencia, nao volume exagerado."
   },
   {
     question: "Por que eu pagaria você se já tenho a academia?",
-    answer: "Academia dá equipamento, não direcionamento. Eu dou método, correção, ajuste fino e responsabilidade."
+    answer: "Academia te dá o peso e a máquina. Eu forneço método, correção, ajuste fino e direcionamento pra você não perder tempo no caminho errado."
   }
 ];
 
@@ -44,10 +44,10 @@ export const FAQSection = () => {
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-6 h-px bg-red-700" />
-            <span className="text-red-700 text-xs tracking-widest">DÚVIDAS FREQUENTES</span>
+            <span className="text-red-700 text-xs tracking-widest">ALGUMA DÚVIDA?</span>
             <div className="w-6 h-px bg-red-700" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-light tracking-tight text-white">Perguntas Frequentes</h2>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight text-white text-center">PERGUNTAS FREQUENTES</h2>
           <div className="w-12 h-px bg-red-700/30 mx-auto mt-6" />
         </div>
         

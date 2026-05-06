@@ -26,11 +26,11 @@ export const Modal = ({ isOpen, onSelect }: ModalProps) => {
           >
             <div className="relative">
               <div className="absolute -top-1 left-0 w-12 h-px bg-red-700" />
-              <h2 className="text-2xl font-light text-white mb-8 tracking-wide pt-2 ">
+              <h2 className="text-xl font-light text-white mb-8 tracking-wide pt-2 ">
                 Olá! Para uma experiência personalizada, responda a seguinte pergunta:
               </h2>
               <p className="text-white text-base mb-8 font-light">
-                Você é de Estância Velha/RS ou região?
+                Você é da região de Estância Velha/RS?
               </p>
             </div>
             

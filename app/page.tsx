@@ -66,9 +66,10 @@ export default function Home() {
         <MethodologySection />
         <ScienceSection />
         <GallerySection />
+        <BeforeAfterCarousel />
         <ServicesSection onCardClick={handleCardClick} />
         <FAQSection />
-        <BeforeAfterCarousel />
+        
         <Footer 
           onPresencialClick={() => handleCardClick('presencial')}
           onOnlineClick={() => handleCardClick('online')}

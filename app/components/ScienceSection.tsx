@@ -40,7 +40,7 @@ export const ScienceSection = () => {
             <div className="w-4 md:w-6 h-px bg-red-700" />
           </div>
           
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-white">Na prática, isso significa:</h2>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight text-white text-center">NA PRÁTICA, ISSO SIGNIFICA:</h2>
           <div className="w-12 h-px bg-red-700/30 mx-auto mt-4 md:mt-6" />
         </div>
         
