@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 interface Slide {
   id: number;
@@ -179,10 +180,24 @@ export const BeforeAfterCarousel = () => {
           </div>
 
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight text-white text-center">
-            RESULTADOS QUE INSPIRAM
+            CONFIAR NO PROCESSO GERA RESULTADO
           </h2>
 
-          <div className="w-14 h-px bg-red-700/40 mx-auto mt-6" />
+          {/* Seta apontando para baixo - MAIOR */}
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="my-6"
+          >
+            <svg 
+              className="w-8 h-8 md:w-10 md:h-10 mx-auto text-red-700" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 13l-7 7-7-7m7-7v14" />
+            </svg>
+          </motion.div>
         </div>
 
         <div className="flex justify-center items-center gap-6">

@@ -34,7 +34,21 @@ export const ServicesSection = ({ onCardClick }: ServicesSectionProps) => {
           </div>
           
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight text-white text-center">DESCUBRA A MODALIDADE IDEAL PARA SEU PERFIL</h2>
-          <div className="w-12 h-px bg-red-700/30 mx-auto mt-4 md:mt-6" />
+          {/* Seta apontando para baixo - MAIOR */}
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="my-6"
+          >
+            <svg 
+              className="w-8 h-8 md:w-10 md:h-10 mx-auto text-red-700" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 13l-7 7-7-7m7-7v14" />
+            </svg>
+          </motion.div>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
@@ -46,9 +60,7 @@ export const ServicesSection = ({ onCardClick }: ServicesSectionProps) => {
             whileHover={{ y: -5 }}
             className="group h-full"
           >
-            <div className="relative bg-neutral-800 p-6 md:p-8 lg:p-10 h-full flex flex-col">
-              <div className="absolute top-0 left-0 w-8 md:w-12 h-px bg-red-700/30 group-hover:w-12 md:group-hover:w-24 transition-all duration-500" />
-              
+            <div className="relative bg-neutral-800 p-6 md:p-8 lg:p-10 h-full flex flex-col border border-red-700/30 hover:border-red-700/50 transition-all duration-500">
               <div className="mt-6 md:mt-8 flex flex-col h-full">
                 <div className="w-6 md:w-8 h-px bg-red-700/30 mb-6 md:mb-8" />
                 <h3 className="text-xl md:text-2xl font-light text-white mb-6 md:mb-8 tracking-wide">TREINAMENTO PRESENCIAL</h3>
@@ -56,17 +68,17 @@ export const ServicesSection = ({ onCardClick }: ServicesSectionProps) => {
                 <div className="mb-6 md:mb-8 flex-grow">
                   <p className="text-red-600 text-lg md:text-xs tracking-wider mb-3 md:mb-4">IDEAL PARA QUEM:</p>
                   <ul className="space-y-5 md:space-y-3">
-                    <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
+                    <li className="flex items-start gap-2 md:gap-3 text-white text-lg md:text-sm">
                       <span className="text-red-700 flex-shrink-0">—</span>
-                      <span>Busca <span className="text-gray-300">evolução acelerada e correção profissional</span> a cada repetição</span>
+                      <span>Busca evolução acelerada e <span className="text-red-600">correção profissional</span> a cada repetição</span>
                     </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
+                    <li className="flex items-start gap-2 md:gap-3 text-white text-lg md:text-sm">
                       <span className="text-red-700 flex-shrink-0">—</span>
-                      <span>Possui <span className="text-gray-300">alguma lesão ou especificidade</span> (ombro, joelho, coluna) e quer a <span className="text-gray-300">segurança de treinar sem dor</span></span>
+                      <span>Possui <span className="text-white">alguma lesão ou especificidade</span> (ombro, joelho, coluna) e quer a <span className="text-white">segurança de</span> <span className="text-red-600">treinar sem dor</span></span>
                     </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
+                    <li className="flex items-start gap-2 md:gap-3 text-white text-lg md:text-sm">
                       <span className="text-red-700 flex-shrink-0">—</span>
-                      <span>Tem <span className="text-gray-300">dificuldade de manter a constância</span> na academia e precisa de um <span className="text-gray-300">acompanhamento que cobre e motive</span> de verdade</span>
+                      <span>Tem <span className="text-white">dificuldade de manter a constância</span> na academia e precisa de um <span className="text-white">acompanhamento que</span> <span className="text-red-600">cobre e motive</span> <span className="text-white">de verdade</span></span>
                     </li>
                   </ul>
                 </div>
@@ -75,7 +87,7 @@ export const ServicesSection = ({ onCardClick }: ServicesSectionProps) => {
                   onClick={() => handleCardClick('presencial')}
                   className="w-full group/btn relative bg-red-700/70 border border-white hover:border-red-700/50 px-4 md:px-6 py-4 md:py-3 text-white text-md md:text-sm tracking-wide transition-all duration-300 mt-auto"
                 >
-                  Quero Treinar Presencialmente
+                  Quero acompanhamento presencial
                 </button>
               </div>
             </div>
@@ -89,27 +101,25 @@ export const ServicesSection = ({ onCardClick }: ServicesSectionProps) => {
             whileHover={{ y: -5 }}
             className="group h-full"
           >
-            <div className="relative bg-neutral-800 p-6 md:p-8 lg:p-10 h-full flex flex-col">
-              <div className="absolute top-0 left-0 w-8 md:w-12 h-px bg-red-700/30 group-hover:w-12 md:group-hover:w-24 transition-all duration-500" />
-              
+            <div className="relative bg-neutral-800 p-6 md:p-8 lg:p-10 h-full flex flex-col border border-red-700/30 hover:border-red-700/50 transition-all duration-500">
               <div className="mt-6 md:mt-8 flex flex-col h-full">
                 <div className="w-6 md:w-8 h-px bg-red-700/30 mb-6 md:mb-8" />
-                <h3 className="text-xl md:text-2xl font-light text-white mb-6 md:mb-8 tracking-wide">CONSULTORIA ONLINE  + BÔNUS PRESENCIAIS</h3>
+                <h3 className="text-xl md:text-2xl font-light text-white mb-6 md:mb-8 tracking-wide">CONSULTORIA ONLINE + BÔNUS PRESENCIAIS</h3>
                 
                 <div className="mb-6 md:mb-8 flex-grow">
                   <p className="text-red-600 text-lg md:text-xs tracking-wider mb-3 md:mb-4">IDEAL PARA QUEM:</p>
                   <ul className="space-y-5 md:space-y-3">
-                    <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
+                    <li className="flex items-start gap-2 md:gap-3 text-white text-lg md:text-sm">
                       <span className="text-red-700 flex-shrink-0">—</span>
-                      <span>Quer <span className="text-gray-300">direcionamento profissional</span> para <span className="text-gray-300">maximizar resultados</span> e <span className="text-gray-300">parar de perder tempo andando sem direção</span> na academia</span>
+                      <span>Quer <span className="text-red-600">direcionamento profissional</span> para <span className="text-white">maximizar resultados</span> e <span className="text-white">parar de perder tempo andando sem direção</span> na academia</span>
                     </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
+                    <li className="flex items-start gap-2 md:gap-3 text-white text-lg md:text-sm">
                       <span className="text-red-700 flex-shrink-0">—</span>
-                      <span>Já tem <span className="text-gray-300">familiaridade com a academia</span> mas sente que <span className="text-gray-300">estagnou</span> – quer evoluir mais mesmo treinando sozinho</span>
+                      <span>Já tem <span className="text-white">familiaridade com a academia</span> mas sente que <span className="text-white">estagnou</span> – <span className="text-red-600">quer evoluir</span> mesmo treinando sozinho</span>
                     </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-gray-400 text-lg md:text-sm">
+                    <li className="flex items-start gap-2 md:gap-3 text-white text-lg md:text-sm">
                       <span className="text-red-700 flex-shrink-0">—</span>
-                      <span>Não quer depender de <span className="text-gray-300">treinos genéricos</span> e busca o <span className="text-gray-300">caminho mais curto e certeiro</span> que só a <span className="text-gray-300">ciência</span> proporciona</span>
+                      <span>Não quer depender de <span className="text-white">treinos genéricos</span> e busca o <span className="text-red-600">caminho mais curto e certeiro</span> que só a <span className="text-white">ciência</span> proporciona</span>
                     </li>
                   </ul>
                 </div>
@@ -118,7 +128,7 @@ export const ServicesSection = ({ onCardClick }: ServicesSectionProps) => {
                   onClick={() => handleCardClick('online')}
                   className="w-full group/btn relative bg-red-700/70 border border-white hover:border-red-700/50 px-4 md:px-6 py-4 md:py-3 text-white text-md md:text-sm tracking-wide transition-all duration-300 mt-auto"
                 >
-                  Consultoria Online
+                  Quero a consultoria online
                 </button>
               </div>
             </div>

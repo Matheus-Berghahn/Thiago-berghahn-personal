@@ -16,7 +16,7 @@ export const AboutSection = () => {
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
           }}
-          className="bg-neutral-800/50 p-6 md:p-10 relative"
+          className="bg-neutral-800/50 p-6 md:p-10 py-12 md:py-0 relative"
         >
           <div className="absolute top-0 left-0 w-px h-12 bg-red-700/30" />
           

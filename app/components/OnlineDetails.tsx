@@ -28,12 +28,15 @@ export const OnlineDetails = ({ onBack }: OnlineDetailsProps) => {
           {/* Título e subtítulo - IDÊNTICO ao Presencial */}
           <div>
             <h1 className="text-2xl md:text-6xl font-light tracking-tight mb-4 text-white text-center">
-              CONSULTORIA ONLINE <span className="text-gray-300">– COM BÔNUS PRESENCIAIS</span>
+              CONSULTORIA ONLINE <span className="text-gray-300 text-lg md:text-5xl"><br></br>COM BÔNUS PRESENCIAIS</span>
             </h1>
+
+            <div className="w-12 h-px bg-red-700/50 my-6 mx-auto" />
+
             <p className="text-gray-400 text-2xl text-center">
               <span className="text-gray-300">Ideal para quem quer a liberdade do online com o diferencial de contato real mensal.</span>
             </p>
-            <div className="w-12 h-px bg-red-700/50 mt-6 mx-auto" />
+
           </div>
 
           {/* Seção Modalidades não existe no Online, mas mantemos estrutura igual, pulamos para Como funciona */}

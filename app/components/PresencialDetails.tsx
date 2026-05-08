@@ -35,23 +35,40 @@ export const PresencialDetails = ({ onBack }: PresencialDetailsProps) => {
         <div className="space-y-16">
           <div>
             <h1 className="text-2xl md:text-6xl font-light tracking-tight mb-4 text-white text-center">TREINAMENTO PRESENCIAL</h1>
+
+             <div className="w-12 h-px bg-red-700/50 my-6 mx-auto" />
+
             <p className="text-gray-400 text-2xl text-center">
               <span className="text-gray-300">Supervisão total para você extrair o máximo do seu potencial a cada treino.</span>
             </p>
-            <div className="w-12 h-px bg-red-700/50 mt-6 mx-auto" />
+
+            {/* Seta apontando para baixo - MAIOR */}
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="my-6"
+          >
+            <svg 
+              className="w-8 h-8 md:w-10 md:h-10 mx-auto text-red-700" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 13l-7 7-7-7m7-7v14" />
+            </svg>
+          </motion.div>
           </div>
 
           <div>
-            <p className="text-gray-300 mb-6 text-center">Modalidades:</p>
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Individual Box */}
               <div className="bg-neutral-800/50 border border-neutral-700 p-8 hover:border-red-700/50 transition-all duration-300">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-2xl font-light text-white">Individual</h3>
-                  <span className="text-xs text-red-700 bg-red-700/10 px-2 py-1">100% personalizado</span>
                 </div>
                 <p className="text-gray-400 text-sm mb-4">
-                  Treino totalmente adaptado aos seus objetivos, com periodização individualizada e acompanhamento exclusivo.
+                  O treinamento é totalmente focado em você. Ótimo pra quem gosta de exclusividade ou tem uma agenda corrida
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-gray-400 text-sm">
@@ -64,7 +81,7 @@ export const PresencialDetails = ({ onBack }: PresencialDetailsProps) => {
                   </li>
                   <li className="flex items-center gap-2 text-gray-400 text-sm">
                     <span className="text-red-700">✓</span>
-                    Resultados mais rápidos
+                    ⁠Flexibilidade de agendamento
                   </li>
                 </ul>
               </div>
@@ -76,7 +93,7 @@ export const PresencialDetails = ({ onBack }: PresencialDetailsProps) => {
                 </div>
                 <h3 className="text-2xl font-light text-white mb-4">Em Dupla</h3>
                 <p className="text-gray-400 text-sm mb-4">
-                  Ideal para <span className="text-gray-300">casais ou amigos</span> que querem treinar juntos com supervisão de qualidade e melhor <span className="text-gray-300">custo-benefício</span>.
+                  Ideal para casais ou amigos que querem treinar juntos com supervisão de qualidade e melhor custo-benefício.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-gray-400 text-sm">

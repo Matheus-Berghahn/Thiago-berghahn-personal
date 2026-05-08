@@ -75,7 +75,7 @@ export const Header = () => {
           transition={{ delay: 1, duration: 0.8 }}
         >
           {/* Treino Inteligente - MAIOR */}
-          <p className="text-2xl md:text-5xl lg:text-6xl text-gray-400 tracking-wide font-light pt-10">
+          <p className="text-2xl md:text-5xl lg:text-6xl text-white tracking-wide font-light pt-10">
             {middleLine}
           </p>
           
@@ -96,7 +96,7 @@ export const Header = () => {
           </motion.div>
           
           {/* Resultado com Ciência - MAIOR */}
-          <p className="text-2xl md:text-5xl lg:text-6xl text-gray-400 tracking-wide font-light mt-4">
+          <p className="text-2xl md:text-5xl lg:text-6xl text-white tracking-wide font-light mt-4">
             {bottomLine}
           </p>
         </motion.div>
