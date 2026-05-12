@@ -16,13 +16,13 @@ export const AboutSection = () => {
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
           }}
-          className="bg-neutral-800/50 p-6 md:p-10 py-12 md:py-0 relative"
+          className="bg-neutral-800/50 p-6 md:p-10 mx-6 relative"
         >
           <div className="absolute top-0 left-0 w-px h-12 bg-red-700/30" />
           
-          <div className="space-y-8 md:space-y-10">
+          <div className="space-y-8 md:space-y-10 ">
             {/* Primeira linha: dois itens lado a lado */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 ">
               {/* Bacharel em Educação Física */}
               <div className="flex items-start gap-4">
                 <div className="w-4 h-px bg-red-700/50 mt-3 flex-shrink-0" />
@@ -33,7 +33,7 @@ export const AboutSection = () => {
               </div>
               
               {/* 5+ anos de experiência em treinamento */}
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 ">
                 <div className="w-4 h-px bg-red-700/50 mt-3 flex-shrink-0" />
                 <div>
                   <h3 className="text-white text-xl md:text-lg font-light tracking-wide">5+ anos de experiência em treinamento</h3>
