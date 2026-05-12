@@ -7,7 +7,7 @@ export const AboutSection = () => {
   const { ref, controls } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="bg-neutral-900 pb-24">
+    <section ref={ref} className="bg-neutral-900 pt-20 pb-8">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial="hidden"
