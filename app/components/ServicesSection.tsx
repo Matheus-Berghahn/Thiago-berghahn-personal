@@ -70,15 +70,15 @@ export const ServicesSection = ({ onCardClick }: ServicesSectionProps) => {
                   <ul className="space-y-5 md:space-y-3">
                     <li className="flex items-start gap-2 md:gap-3 text-white text-lg md:text-sm">
                       <span className="text-red-700 flex-shrink-0">—</span>
-                      <span>Busca evolução acelerada e <span className="text-red-600">correção profissional</span> a cada repetição</span>
+                      <span>Busca evolução acelerada e <span className="text-red-600 uppercase">correção profissional</span> a cada repetição.</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-white text-lg md:text-sm">
                       <span className="text-red-700 flex-shrink-0">—</span>
-                      <span>Possui <span className="text-white">alguma lesão ou especificidade</span> (ombro, joelho, coluna) e quer a <span className="text-white">segurança de</span> <span className="text-red-600">treinar sem dor</span></span>
+                      <span>Possui <span className="text-white">alguma lesão ou especificidade</span> (ombro, joelho, coluna) e quer a <span className="text-white">segurança de</span> <span className="text-red-600 uppercase">treinar sem dor</span>.</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-white text-lg md:text-sm">
                       <span className="text-red-700 flex-shrink-0">—</span>
-                      <span>Tem <span className="text-white">dificuldade de manter a constância</span> na academia e precisa de um <span className="text-white">acompanhamento que</span> <span className="text-red-600">cobre e motive</span> <span className="text-white">de verdade</span></span>
+                      <span>Tem <span className="text-white">dificuldade de manter a constância</span> na academia e precisa de um <span className="text-white">acompanhamento que</span> <span className="text-red-600 uppercase">cobre e motive</span> <span className="text-white">de verdade.</span></span>
                     </li>
                   </ul>
                 </div>
@@ -111,15 +111,15 @@ export const ServicesSection = ({ onCardClick }: ServicesSectionProps) => {
                   <ul className="space-y-5 md:space-y-3">
                     <li className="flex items-start gap-2 md:gap-3 text-white text-lg md:text-sm">
                       <span className="text-red-700 flex-shrink-0">—</span>
-                      <span>Quer <span className="text-red-600">direcionamento profissional</span> para <span className="text-white">maximizar resultados</span> e <span className="text-white">parar de perder tempo andando sem direção</span> na academia</span>
+                      <span>Quer <span className="text-red-600 uppercase">direcionamento profissional</span> para <span className="text-white">maximizar resultados</span> e <span className="text-white">parar de perder tempo andando sem direção</span> na academia.</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-white text-lg md:text-sm">
                       <span className="text-red-700 flex-shrink-0">—</span>
-                      <span>Já tem <span className="text-white">familiaridade com a academia</span> mas sente que <span className="text-white">estagnou</span> – <span className="text-red-600">quer evoluir</span> mesmo treinando sozinho</span>
+                      <span>Já tem <span className="text-white">familiaridade com a academia</span> mas sente que <span className="text-white">estagnou</span> – <span className="text-red-600 uppercase">quer evoluir</span> mesmo treinando sozinho.</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-white text-lg md:text-sm">
                       <span className="text-red-700 flex-shrink-0">—</span>
-                      <span>Não quer depender de <span className="text-white">treinos genéricos</span> e busca o <span className="text-red-600">caminho mais curto e certeiro</span> que só a <span className="text-white">ciência</span> proporciona</span>
+                      <span>Não quer depender de <span className="text-white">treinos genéricos</span> e busca o <span className="text-red-600 uppercase">caminho mais curto e certeiro</span> que só a <span className="text-white">ciência</span> proporciona.</span>
                     </li>
                   </ul>
                 </div>

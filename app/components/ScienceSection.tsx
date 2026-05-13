@@ -13,19 +13,19 @@ export const ScienceSection = () => {
       desc: 'Nada de treino genérico. Cada exercício, série e carga tem um motivo.'
     },
     {
-      title: 'Ajustes dinâmicos',
+      title: 'Ajustes Dinâmicos',
       desc: 'Seu treino evolui e é ajustado de acordo com suas demandas específicas.'
     },
     {
       title: 'Suporte Integral',
-      desc: 'Acompanhamento do planejamento à execução. Com correções ao vivo no presencial e feedbacks diários no online'
+      desc: 'Acompanhamento do planejamento à execução. Com correções ao vivo no presencial e feedbacks diários no online.'
     },
     {
-      title: 'Foco em resultado sustentável',
+      title: 'Foco em Resultado Sustentável',
       desc: 'Sem loucura, sem lesão. Treino pesado com inteligência.'
     },
     {
-      title: 'Certeza de resultado',
+      title: 'Certeza de Resultado',
       desc: 'Presencial ou online, meu acompanhamento garante que você está no caminho certo. Por quê? Tudo é embasado na literatura científica.'
     }
   ];

@@ -7,7 +7,10 @@ export const AboutSection = () => {
   const { ref, controls } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="bg-black pt-20 pb-8">
+    <section ref={ref} className="bg-black pt-20 pb-20 relative">
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-700/20 to-transparent" />
+
+      
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial="hidden"
@@ -28,7 +31,7 @@ export const AboutSection = () => {
                 <div className="w-4 h-px bg-red-700/50 mt-3 flex-shrink-0" />
                 <div>
                   <h3 className="text-white text-xl md:text-lg font-light tracking-wide">Bacharel em Educação Física</h3>
-                  <p className="text-gray-500 text-lg md:text-sm mt-1">Universidade Feevale</p>
+                  <p className="text-gray-500 text-lg md:text-sm mt-1">Universidade Feevale.</p>
                 </div>
               </div>
               
@@ -37,7 +40,7 @@ export const AboutSection = () => {
                 <div className="w-4 h-px bg-red-700/50 mt-3 flex-shrink-0" />
                 <div>
                   <h3 className="text-white text-xl md:text-lg font-light tracking-wide">5+ anos de experiência em treinamento</h3>
-                  <p className="text-gray-500 text-lg md:text-sm mt-1">Conhecimento científico + prática diária alinhados para seu resultado</p>
+                  <p className="text-gray-500 text-lg md:text-sm mt-1">Conhecimento científico + prática diária alinhados para seu resultado.</p>
                 </div>
               </div>
             </div>
@@ -49,7 +52,7 @@ export const AboutSection = () => {
                 <div className="w-4 h-px bg-red-700/50 mt-3 flex-shrink-0" />
                 <div>
                   <h3 className="text-white text-xl md:text-lg font-light tracking-wide">Especialista em musculação</h3>
-                  <p className="text-gray-500 text-lg md:text-sm mt-1">Emagrecimento e hipertrofia</p>
+                  <p className="text-gray-500 text-lg md:text-sm mt-1">Emagrecimento e hipertrofia.</p>
                 </div>
               </div>
               
@@ -58,13 +61,15 @@ export const AboutSection = () => {
                 <div className="w-4 h-px bg-red-700/50 mt-3 flex-shrink-0" />
                 <div>
                   <h3 className="text-white text-xl md:text-lg font-light tracking-wide">Reabilitação de lesões</h3>
-                  <p className="text-gray-500 text-lg md:text-sm mt-1">Trato lesões de ombro, coluna, quadril, joelho e tornozelo</p>
+                  <p className="text-gray-500 text-lg md:text-sm mt-1">Trato lesões de ombro, coluna, quadril, joelho e tornozelo.</p>
                 </div>
               </div>
             </div>
           </div>
+          
         </motion.div>
       </div>
+
     </section>
   );
 };

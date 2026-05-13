@@ -14,7 +14,7 @@ export const Footer = ({ onPresencialClick, onOnlineClick }: FooterProps) => {
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-6 h-px bg-red-700" />
-            <span className="text-red-700 text-xs tracking-widest">PRÓXIMO PASSO</span>
+            <span className="text-red-700 text-xs tracking-widest">ATENÇÃO</span>
             <div className="w-6 h-px bg-red-700" />
           </div>
           

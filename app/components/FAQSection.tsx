@@ -27,7 +27,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Preciso treinar todos os dias?",
-    answer: "Não. A maioria dos meus alunos treinam de 3 a 4 vezes por semana. Consistencia, nao volume exagerado."
+    answer: "Não. A maioria dos meus alunos treinam de 3 a 4 vezes por semana. Consistência, não volume exagerado."
   },
   {
     question: "Por que eu pagaria você se já tenho a academia?",
