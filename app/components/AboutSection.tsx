@@ -2,19 +2,36 @@
 
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useEffect, useState } from 'react';
 
 export const AboutSection = () => {
   const { ref, controls } = useScrollAnimation();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Fallback: se o observer não funcionar em 500ms, força visível
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    // Quando o controls mudar pra "visible", marca como visível
+    if (controls === "visible") {
+      setIsVisible(true);
+    }
+  }, [controls]);
 
   return (
     <section ref={ref} className="bg-black pt-20 pb-20 relative">
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-700/20 to-transparent" />
-
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-700/20 to-transparent" />
       
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial="hidden"
-          animate={controls}
+          animate={isVisible ? "visible" : controls}
           variants={{
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
