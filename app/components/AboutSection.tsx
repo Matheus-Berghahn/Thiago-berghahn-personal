@@ -17,13 +17,6 @@ export const AboutSection = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    // Quando o controls mudar pra "visible", marca como visível
-    if (controls === "visible") {
-      setIsVisible(true);
-    }
-  }, [controls]);
-
   return (
     <section ref={ref} className="bg-black pt-20 pb-20 relative">
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-700/20 to-transparent" />
@@ -38,12 +31,11 @@ export const AboutSection = () => {
           }}
           className="bg-neutral-800/50 p-6 md:p-10 mx-6 relative"
         >
+          {/* resto do conteúdo igual, sem mudanças */}
           <div className="absolute top-0 left-0 w-px h-12 bg-red-700/30" />
           
           <div className="space-y-8 md:space-y-10 ">
-            {/* Primeira linha: dois itens lado a lado */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 ">
-              {/* Bacharel em Educação Física */}
               <div className="flex items-start gap-4">
                 <div className="w-4 h-px bg-red-700/50 mt-3 flex-shrink-0" />
                 <div>
@@ -52,7 +44,6 @@ export const AboutSection = () => {
                 </div>
               </div>
               
-              {/* 5+ anos de experiência em treinamento */}
               <div className="flex items-start gap-4 ">
                 <div className="w-4 h-px bg-red-700/50 mt-3 flex-shrink-0" />
                 <div>
@@ -62,9 +53,7 @@ export const AboutSection = () => {
               </div>
             </div>
             
-            {/* Segunda linha: dois itens lado a lado */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6">
-              {/* Especialista em musculação */}
               <div className="flex items-start gap-4">
                 <div className="w-4 h-px bg-red-700/50 mt-3 flex-shrink-0" />
                 <div>
@@ -73,7 +62,6 @@ export const AboutSection = () => {
                 </div>
               </div>
               
-              {/* Reabilitação de lesões */}
               <div className="flex items-start gap-4">
                 <div className="w-4 h-px bg-red-700/50 mt-3 flex-shrink-0" />
                 <div>

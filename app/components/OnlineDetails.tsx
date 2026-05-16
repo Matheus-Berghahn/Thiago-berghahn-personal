@@ -9,7 +9,7 @@ interface OnlineDetailsProps {
 export const OnlineDetails = ({ onBack }: OnlineDetailsProps) => {
   const whatsappNumber = '555185241141';
   const whatsappMessage = encodeURIComponent(
-    'Olá! Gostaria de saber mais sobre a CONSULTORIA ONLINE (COM BÔNUS).'
+    'Olá! Gostaria de saber mais sobre a Consultoria Online.'
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 

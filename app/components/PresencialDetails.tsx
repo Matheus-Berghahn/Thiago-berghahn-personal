@@ -17,7 +17,7 @@ export const PresencialDetails = ({ onBack }: PresencialDetailsProps) => {
 
   const whatsappNumber = '555185241141'; // sem + e sem espaços
   const whatsappMessage = encodeURIComponent(
-    'Olá! Gostaria de agendar minha AULA EXPERIMENTAL de Treinamento Presencial.'
+    'Olá! Gostaria de saber mais sobre o Treinamento Presencial.'
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
