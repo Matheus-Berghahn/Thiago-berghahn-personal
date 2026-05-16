@@ -18,7 +18,7 @@ export const GallerySection = () => {
           className="flex justify-center items-center"
         >
           <Image
-            src="/IMG_seta.jpg"
+            src="/IMG_seta.png"
             alt="Seta"
             width={1000}
             height={800}
