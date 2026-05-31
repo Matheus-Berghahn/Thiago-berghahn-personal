@@ -45,7 +45,7 @@ export const Footer = ({ onPresencialClick, onOnlineClick }: FooterProps) => {
               onClick={onPresencialClick}
               className="px-8 py-3 bg-transparent border border-red-700/50 hover:bg-red-700/10 text-white text-sm tracking-wide transition-all"
             >
-              PRESENCIAL
+              TREINAMENTO PRESENCIAL
             </button>
             <button
               onClick={onOnlineClick}

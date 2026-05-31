@@ -41,7 +41,7 @@ export const MethodologySection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 text-center">
           {features.map((feature, index) => (
             <motion.div
               key={index}

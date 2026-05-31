@@ -87,7 +87,7 @@ export const ServicesSection = ({ onCardClick }: ServicesSectionProps) => {
                   onClick={() => handleCardClick('presencial')}
                   className="w-full group/btn relative bg-red-700/70 border border-white hover:border-red-700/50 px-4 md:px-6 py-4 md:py-3 text-white text-md md:text-sm tracking-wide transition-all duration-300 mt-auto"
                 >
-                  Quero acompanhamento presencial
+                  QUERO TREINAMENTO PRESENCIAL
                 </button>
               </div>
             </div>
@@ -115,7 +115,7 @@ export const ServicesSection = ({ onCardClick }: ServicesSectionProps) => {
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-white text-lg md:text-sm">
                       <span className="text-red-700 flex-shrink-0">—</span>
-                      <span>Já tem <span className="text-white">familiaridade com a academia</span> mas sente que <span className="text-white">estagnou</span> – <span className="text-red-600 uppercase">quer evoluir</span> mesmo treinando sozinho.</span>
+                      <span>Já tem <span className="text-white">familiaridade com a academia</span> mas sente que <span className="text-white">estagnou</span>. <span className="text-red-600 uppercase">quer evoluir</span> mesmo treinando sozinho.</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-white text-lg md:text-sm">
                       <span className="text-red-700 flex-shrink-0">—</span>
@@ -128,7 +128,7 @@ export const ServicesSection = ({ onCardClick }: ServicesSectionProps) => {
                   onClick={() => handleCardClick('online')}
                   className="w-full group/btn relative bg-red-700/70 border border-white hover:border-red-700/50 px-4 md:px-6 py-4 md:py-3 text-white text-md md:text-sm tracking-wide transition-all duration-300 mt-auto"
                 >
-                  Quero a consultoria online
+                  QUERO CONSULTORIA ONLINE
                 </button>
               </div>
             </div>

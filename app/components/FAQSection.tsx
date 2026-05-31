@@ -32,6 +32,10 @@ const faqs: FAQItem[] = [
   {
     question: "Por que eu pagaria você se já tenho a academia?",
     answer: "Academia te dá o peso e a máquina. Eu forneço método, correção, ajuste fino e direcionamento pra você não perder tempo no caminho errado."
+  },
+  {
+    question: "Você faz dieta?",
+    answer: "Eu recomendo meu amigo e nutricionista formado Fernando Conceição"
   }
 ];
 
@@ -71,7 +75,21 @@ export const FAQSection = () => {
                     className="overflow-hidden"
                   >
                     <div className="px-6 pb-4 text-gray-500 text-mg leading-relaxed">
-                      {faq.answer}
+                      {faq.question === "Você faz dieta?" ? (
+                        <>
+                          Eu recomendo meu amigo e nutricionista formado Fernando Conceição{' '}
+                          <a 
+                            href="https://www.instagram.com/nutrifernandoc/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-red-600 underline hover:text-red-700 transition-colors"
+                          >
+                            @nutrifernandoc
+                          </a>
+                        </>
+                      ) : (
+                        faq.answer
+                      )}
                     </div>
                   </motion.div>
                 )}
