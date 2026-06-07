@@ -209,7 +209,7 @@ export const PresencialDetails = ({ onBack }: PresencialDetailsProps) => {
             </div>
           </div>
 
-          <div className="bg-neutral-800 p-8 justify-center flex-col w-full">
+          <div className="bg-neutral-800 p-8 flex justify-center flex-col items-center w-full">
             <p className="text-gray-400 text-lg mb-4 text-center">
               <span className="text-gray-300 ">Vagas presenciais limitadas por horário.</span>
             </p>
