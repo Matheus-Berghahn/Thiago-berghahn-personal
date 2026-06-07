@@ -14,13 +14,20 @@ export const ServicesSection = ({ onCardClick }: ServicesSectionProps) => {
   const handleCardClick = (type: 'presencial' | 'online') => {
     onCardClick(type);
     
-    // Rolar suavemente até o início da seção correspondente
-    setTimeout(() => {
+    // Usar requestAnimationFrame para garantir que o DOM está pronto
+    requestAnimationFrame(() => {
       const element = document.getElementById(`${type}-section`);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Calcular a posição correta considerando o scroll
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
       }
-    }, 100);
+    });
   };
 
   return (

@@ -19,13 +19,13 @@ export const Header = () => {
   const bottomLine = "RESULTADO COM CIÊNCIA";
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-black">
+    <section className="relative w-full min-h-auto md:min-h-screen flex items-center flex-col justify-center bg-black py-20">
       {/* Degradê do topo vermelho para preto */}
       <div className="absolute inset-0 bg-gradient-to-b from-red-700/70 via-transparent to-transparent" />
       
       {/* Logo no topo dentro do degradê */}
-      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="w-[300] h-[160] md:w-[400] h-[214] relative">
+      <div className="relative w-full h-full flex items-center flex-col justify-center z-10 ">
+        <div className="w-4/5 h-30 md:w-[400] md:h-64 lg:h-80 py-20 md:py-0 relative">
           <Image
             src="/logo.svg"
             alt="Logo"
@@ -37,7 +37,7 @@ export const Header = () => {
       
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-700/20 to-transparent" />
       
-      <div className="relative text-center px-6 pt-10 md:pt-40">
+      <div className="relative text-center px-6 pt-10 ">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
