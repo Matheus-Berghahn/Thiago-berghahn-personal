@@ -28,9 +28,11 @@ export default function Home() {
   };
 
   const handleCardClick = (type: 'presencial' | 'online') => {
-    setShowDetails(type);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  setShowDetails(type);
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, 50);
+};
 
   const handleBackToCards = () => {
     setShowDetails(null);
