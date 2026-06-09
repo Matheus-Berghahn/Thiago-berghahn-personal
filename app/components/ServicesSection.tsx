@@ -12,23 +12,22 @@ export const ServicesSection = ({ onCardClick }: ServicesSectionProps) => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   const handleCardClick = (type: 'presencial' | 'online') => {
-    onCardClick(type);
-    
-    // Usar requestAnimationFrame para garantir que o DOM está pronto
-    requestAnimationFrame(() => {
-      const element = document.getElementById(`${type}-section`);
-      if (element) {
-        // Calcular a posição correta considerando o scroll
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset;
-        
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  };
+  onCardClick(type);
+  
+  // Aguarda o DOM renderizar/expandir o componente antes de calcular posição
+  setTimeout(() => {
+    const element = document.getElementById(`${type}-section`);
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }, 100);
+};
 
   return (
     <section ref={ref} className="bg-neutral-900 py-16 md:py-24">
