@@ -27,11 +27,12 @@ export default function Home() {
     setModalOpen(false);
   };
 
-  const handleCardClick = (type: 'presencial' | 'online') => {
+ const handleCardClick = (type: 'presencial' | 'online') => {
   setShowDetails(type);
   setTimeout(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }, 50);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, 0);
 };
 
   const handleBackToCards = () => {
