@@ -12,6 +12,7 @@ export const PresencialDetails = ({ onBack }: PresencialDetailsProps) => {
     { nome: 'Biogym (Rincão dos Ilhéus)', insta: 'https://www.instagram.com/biogymilheus/' },
     { nome: 'Academia Coliseu (Bela Vista)', insta: 'https://www.instagram.com/academiacoliseu_estanciavelha/' },
     { nome: 'Go4 Academia (Centro)', insta: 'https://www.instagram.com/go4academia/' },
+    { nome: 'HardFit (Novo  Hamburgo', insta: 'https://www.instagram.com/hardfitnovohamburgo/' },
     { nome: 'Fullfit Academia (Centro)', insta: 'https://www.instagram.com/fullfit.academia/' }
   ];
 
